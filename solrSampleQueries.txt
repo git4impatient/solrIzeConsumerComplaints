@@ -1,0 +1,13 @@
+ curl "http://localhost:8893/solr/complaints/select?q=company:M&T*"
+curl -G http://localhost:8893/solr/complaints/select --data-urlencode "q=company:\"M&T*\""
+curl -G http://localhost:8893/solr/complaints/select --data-urlencode "q=company:\"M&T*\"+issue:\"*loan*\""
+curl -G http://localhost:8893/solr/complaints/select --data-urlencode "q=company:\"M&T*\"+issue:\"*loan*\"+consumerdisputed:yes"
+curl -G http://localhost:8893/solr/complaints/select --data-urlencode "q=company:\"M&T*\"+issue:\"*loan*\"+timelyresponse:no+ consumerdisputed:yes"
+
+
+exit
+
+curl -G http://localhost:8893/solr/complaints/select --data-urlencode "q=company:\"M&T*\"+issue:\"*loan*\""
+curl -G http://localhost:8893/solr/inpatient2/select --data-urlencode "q=providername:\"Hospital memorial\"~2+providerstate:FL"
+curl -G http://localhost:8893/solr/inpatient2/select --data-urlencode "q=providername:\"Hospital memorial\"~2 AND providerstate:FL"
+curl -G http://localhost:8893/solr/inpatient2/select --data-urlencode "q=providername:\"Hospital memorial\"~2 AND -providerstate:FL"
